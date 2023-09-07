@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,4 +8,10 @@
 <body>
     <div>Hello World</div>
 </body>
-</html>
+</html> --}}
+@extends('app')
+
+@section('content')
+   <h1>WELCOME PAGE</h1> 
+   <a href="{{route('about')}}">To about</a>
+@endsection

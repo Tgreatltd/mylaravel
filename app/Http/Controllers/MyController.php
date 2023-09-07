@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+ 
 use illuminate\Http\Request;
 
 class MyController extends Controller

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,4 +8,11 @@
 <body>
     <div>Hello {{$name}}{{$age}}</div>
 </body>
-</html>
+</html> --}}
+
+@extends('app')
+
+@section('content')
+   <h1>WELCOME to about page</h1> 
+   
+@endsection
