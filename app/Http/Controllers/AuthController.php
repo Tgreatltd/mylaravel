@@ -30,5 +30,8 @@ class AuthController extends Controller
         session()->flash('errorlogin', 'invalid Creds');
         return redirect()->back();
     }
+    else{
+        return redirect()->route('dashboard');
+    }
     }
 }
