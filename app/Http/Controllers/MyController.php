@@ -13,4 +13,8 @@ class MyController extends Controller
     function about(Request $request){
         return view('about', ['name'=>$request->name, 'age'=>$request->age]);
     }
+
+  public  function login(){
+        return view('login');
+    }
 }

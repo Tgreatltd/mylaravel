@@ -24,4 +24,11 @@ class AuthController extends Controller
         session()->flash('success','Your account has been registered');
         return Redirect()->back();
     }
+    public function signin(Request $request){
+        $token = auth() ->attempt(['email'=> $request->email, 'password'=>$request->password]);
+    if(!$token){
+        session()->flash('errorlogin', 'invalid Creds');
+        return redirect()->back();
+    }
+    }
 }
