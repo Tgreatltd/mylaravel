@@ -11,21 +11,21 @@
             @csrf
             <div class="form-group">
                 <label for="firstName">FirstName</label>
-                <input type="text" class="form-control" name="firstName">
+                <input type="text" class="form-control" name="firstName" value="{{old('firstName')}}">
                 @error('firstName')
                     <small class="text-danger">{{$message}}</small>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="lastName">lastName</label>
-                <input type="text" class="form-control" name="lastName">
+                <input type="text" class="form-control" name="lastName" value="{{old('lastName')}}">
                 @error('lastName')
                     <small class="text-danger">{{$message}}</small>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" name="email">
+                <input type="text" class="form-control" name="email" value="{{old('email')}}">
                 @error('email')
                     <small class="text-danger">{{$message}}</small>
                 @enderror

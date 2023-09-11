@@ -28,7 +28,7 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'signup'])->name('signup');
 Route::get('/login', [MyController::class, 'login'])->name('login');
 Route::post('/signin', [AuthController::class, 'signin'])->name('signin');
-Route::get('/dashboard', [MyController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [MyController::class, 'dashboard'])->name('dashboard')->middleware(['auth', 'isadmin']);
 
 
 // fallback is used to handle 404 error pages
