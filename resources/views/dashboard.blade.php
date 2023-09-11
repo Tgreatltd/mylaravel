@@ -8,8 +8,8 @@
 @endguest
 
 @auth
-    {{-- <a href="{{route('logout')}}">Logout</a> --}}
-    <a href="">Logout</a>
+    <a href="{{route('logout')}}">Logout</a>
+    {{-- <a href="">Logout</a> --}}
 @endauth
 
 @php
