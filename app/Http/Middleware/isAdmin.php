@@ -15,6 +15,11 @@ class isAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
+       
+        if($request->user()->role !='admin'){
+         return redirect()->to('about');
+        }
+
         return $next($request);
     }
 }
