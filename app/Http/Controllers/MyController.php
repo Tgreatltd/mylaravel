@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
- 
+
+use App\Models\User;
 use illuminate\Http\Request;
 
 class MyController extends Controller
@@ -18,6 +19,13 @@ class MyController extends Controller
         return view('login');
     }
     public function dashboard(){
-        return view('dashboard');
+        // return view('dashboard', ['users'=> User::paginate(10)]);
+        return view('dashboard', ['used'=> User::all()]);
+    }
+
+    public  function edit($id){
+        
+        return view('edit', ['user'=>User::find($id)]);
+      
     }
 }

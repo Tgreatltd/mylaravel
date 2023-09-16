@@ -17,7 +17,7 @@ class isAdmin
     {
        
         if($request->user()->role !='admin'){
-         return redirect()->to('about');
+         return redirect()->to('login');
         }
 
         return $next($request);

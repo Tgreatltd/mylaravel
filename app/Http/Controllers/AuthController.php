@@ -39,4 +39,29 @@ class AuthController extends Controller
         auth()->logout();
         return redirect()->route('login');
     }
+
+    public function update(Request $request, $id){
+        $data =$request->validate([
+            'firstName'=> 'required|string',
+            'lastName'=> 'required|string',
+        ]);
+
+        $user = User::find($id);
+        if(!$user){
+           return redirect()->back()->with('error', 'User not found');
+        }
+        $user->firstName = $data['firstName'];
+        $user->lastName = $data['lastName'];
+        $user->save();
+        return redirect()-> route('dashboard');
+    }
+
+    public function del($id){
+        $user = User::find($id);
+        if($user){
+         $user->delete();
+         return redirect()->route('dashboard');
+        }
+        // return redirect()->route('dashboard');
+    }
 }
