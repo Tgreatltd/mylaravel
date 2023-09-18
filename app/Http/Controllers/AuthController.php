@@ -23,7 +23,6 @@ class AuthController extends Controller
         User::create($data);
         User::create($data);
         User::create($data);
-        User::create($data);
         session()->flash('success','Your account has been registered');
         return Redirect()->back();
     }
