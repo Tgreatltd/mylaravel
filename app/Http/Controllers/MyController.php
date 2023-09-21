@@ -23,12 +23,12 @@ class MyController extends Controller
         // return view('dashboard', ['used'=> User::all()]);
     
         // if you want to access the dashboard without the auth middleware in your route
-   $user =$request->user();
+        $user= User::all();
         if ($user) {
-            return view('dashboard',$user );
+            return view('dashboard',compact('user'));
         }
         else{
-            return redirect('/login');
+          return  redirect('/login');
         }
     }
 
