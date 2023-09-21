@@ -29,7 +29,7 @@ Route::post('/register', [AuthController::class, 'signup'])->name('signup');
 Route::get('/login', [MyController::class, 'login'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/signin', [AuthController::class, 'signin'])->name('signin');
-Route::get('/dashboard', [MyController::class, 'dashboard'])->name('dashboard')->middleware(['auth']);
+Route::get('/dashboard', [MyController::class, 'dashboard'])->name('dashboard')->middleware(['auth', 'isAdmin']);
 Route::get('/edit/{id}', [MyController::class, 'edit'])->name('edit');
 Route::post('/update/{id}', [AuthController::class, 'update'])->name('update');
 Route::get('/del/{id}', [AuthController::class, 'del'])->name('del');
