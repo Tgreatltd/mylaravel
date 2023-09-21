@@ -14,5 +14,6 @@
 
 @section('content')
    <h1>WELCOME to about page</h1> 
+   <h1>you can't logging because you are not an admin</h1> 
    
 @endsection
