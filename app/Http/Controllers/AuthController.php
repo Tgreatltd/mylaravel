@@ -25,7 +25,7 @@ class AuthController extends Controller
         User::create($data);
         session()->flash('success','Your account has been registered');
         $mailing = ['subject'=>'welcome', 'message'=> 'you are welcome to our page'];
-        Mail::to('email')->send(new sendEmail($mailing));
+        Mail::to($request->email)->send(new sendEmail($mailing));
         return Redirect()->back();
     }
     public function signin(Request $request){
