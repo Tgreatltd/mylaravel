@@ -2,12 +2,14 @@
 
 namespace App\Mail;
 
+// use Faker\Provider\ar_EG\Address;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Address;
 
 class sendEmail extends Mailable
 {
@@ -16,9 +18,13 @@ class sendEmail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public $subject, $details;
+    public function __construct($mailing)
     {
-        //
+        {
+            $this->subject = $mailing['subject'];
+            $this->details = $mailing['message'];
+        }
     }
 
     /**
@@ -27,7 +33,10 @@ class sendEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Send Email',
+            // subject: 'Send Email',
+            from: new Address('olamoyegunoluwagreat@gmail.com', 'TGREAT UNIVERSAL LIMITED'),
+            // subject: 'Class Trial',
+            subject: $this->subject,
         );
     }
 
@@ -37,7 +46,7 @@ class sendEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'mail',
         );
     }
 

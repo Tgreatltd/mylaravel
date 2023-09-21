@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\sendEmail;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
 class AuthController extends Controller
@@ -22,6 +24,8 @@ class AuthController extends Controller
 
         User::create($data);
         session()->flash('success','Your account has been registered');
+        $mailing = ['subject'=>'welcome', 'message'=> 'you are welcome to our page'];
+        Mail::to('email')->send(new sendEmail($mailing));
         return Redirect()->back();
     }
     public function signin(Request $request){
