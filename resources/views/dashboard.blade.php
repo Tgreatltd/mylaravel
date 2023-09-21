@@ -15,9 +15,8 @@
 @php
     $user=auth()->user();
 @endphp
-
     {{-- <h1>welcome {{$user->firstName}} {{$user->lastName}}</h1> --}}
-    {{-- @csrf
+    @csrf
     <div class="container">
         <table class="table table-striped">
             <thead>
@@ -45,7 +44,7 @@
                     @endforeach
                 </tbody>
             </thead>
-        </table> --}}
+        </table>
         {{-- <button  class="btn btn-success"><a href="{{url('edit/'.$usa->id)}}">Edit</a></button> --}}
         {{-- <a href="{{url('del/'.$usa->id)}}">Delete</a> --}}
     {{-- {{ $used->links() }} --}}
