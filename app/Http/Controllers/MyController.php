@@ -18,9 +18,10 @@ class MyController extends Controller
   public  function login(){
         return view('login');
     }
-    public function dashboard(){
+    public function dashboard(Request $request){
         // return view('dashboard', ['users'=> User::paginate(10)]);
-        return view('dashboard', ['used'=> User::all()]);
+        // return view('dashboard', ['used'=> User::all()]);
+        return view('dashboard', ['firstName']);
     }
 
     public  function edit($id){

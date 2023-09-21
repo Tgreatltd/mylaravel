@@ -15,7 +15,7 @@
 @php
     $user=auth()->user();
 @endphp
-    <h1>welcome {{$user->firstName}} {{$user->lastName}}</h1>
+    {{-- <h1>welcome {{$user->firstName}} {{$user->lastName}}</h1> --}}
     @csrf
     <div class="container">
         <table class="table table-striped">
@@ -26,7 +26,7 @@
                     <th>Action</th>
                 </tr>
                 <tbody>
-                    @foreach ($used as $usa)
+                    @foreach ($user as $usa)
                         <tr>
                             <td>{{$usa->firstName}}</td>
                             <td>{{$usa->lastName}}</td>
