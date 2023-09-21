@@ -15,7 +15,7 @@
 @php
     $user=auth()->user();
 @endphp
-    {{-- <h1>welcome {{$user->firstName}} {{$user->lastName}}</h1> --}}
+    <h1>welcome {{$user->firstName}} {{$user->lastName}}</h1>
     @csrf
     <div class="container">
         <table class="table table-striped">
@@ -26,7 +26,7 @@
                     <th>Action</th>
                 </tr>
                 <tbody>
-                    @foreach ($user as $usa)
+                    @foreach ($used as $usa)
                         <tr>
                             <td>{{$usa->firstName}}</td>
                             <td>{{$usa->lastName}}</td>
@@ -47,6 +47,6 @@
         </table>
         {{-- <button  class="btn btn-success"><a href="{{url('edit/'.$usa->id)}}">Edit</a></button> --}}
         {{-- <a href="{{url('del/'.$usa->id)}}">Delete</a> --}}
-    {{ $users->links() }}
+    {{-- {{ $users->links() }} --}}
     </div>
 @endsection

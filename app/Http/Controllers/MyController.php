@@ -20,8 +20,9 @@ class MyController extends Controller
     }
     public function dashboard(Request $request){
         // return view('dashboard', ['users'=> User::paginate(10)]);
-        return view('dashboard', ['users'=> User::all()]);
-    
+        return view('dashboard', ['used'=> User::all()]);
+
+        
         // if you want to access the dashboard without the auth middleware in your route
         // $user= User::all();
         // if ($user) {
