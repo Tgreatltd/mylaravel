@@ -13,7 +13,7 @@
 @endauth
 
 @php
-    $user=auth()->user();
+    // $user=auth()->user();
 @endphp
     {{-- <h1>welcome {{$user->firstName}} {{$user->lastName}}</h1> --}}
     @csrf
