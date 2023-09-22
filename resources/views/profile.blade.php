@@ -4,5 +4,5 @@
 @endphp
 @section('content')
 
-    <h1>WELCOME {{$user->firstName}}</h1>
+    <h1>WELCOME {{$user->firstName}} {{$user->lastName}}</h1>
 @endsection
