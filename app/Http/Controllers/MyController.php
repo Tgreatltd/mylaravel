@@ -10,6 +10,9 @@ class MyController extends Controller
     function index(){
         return view('welcome');
     }
+    function profile(){
+        return view('profile');
+    }
 
     function about(Request $request){
         return view('about', ['name'=>$request->name, 'age'=>$request->age]);

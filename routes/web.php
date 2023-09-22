@@ -27,6 +27,7 @@ Route::get('/board/{name?}/{age?}', function ($name=null,$age=null) {
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'signup'])->name('signup');
 Route::get('/login', [MyController::class, 'login'])->name('login');
+Route::get('/profile', [MyController::class, 'login'])->name('profile');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/signin', [AuthController::class, 'signin'])->name('signin');
 Route::get('/dashboard', [MyController::class, 'dashboard'])->name('dashboard')->middleware(['auth', 'isAdmin']);
