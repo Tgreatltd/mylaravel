@@ -27,7 +27,7 @@ class AuthController extends Controller
         $mailing = ['subject'=>'welcome', 'message'=> 'you are welcome to our page'];
         Mail::to($request->email)->send(new sendEmail($mailing));
         // return Redirect()->back();
-        return Redirect('/profile');
+        return Redirect('/profile', );
     }
     public function signin(Request $request){
         $token = auth() ->attempt(['email'=> $request->email, 'password'=>$request->password]);
