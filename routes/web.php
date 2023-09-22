@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MyController::class, 'index']);
 // Route::get('/about/{name=?}/{age=?}', [MyController::class, 'about/name/age'])->name('about/name/age');
-Route::get('/about', [MyController::class, 'about'])->name('about');
+Route::get('/about/{name}', [MyController::class, 'about'])->name('about');
 
 Route::get('/board/{name?}/{age?}', function ($name = null, $age = null) {
     return view('board', ['name' => $name, 'age' => $age]);
