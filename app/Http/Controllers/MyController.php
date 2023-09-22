@@ -23,7 +23,9 @@ class MyController extends Controller
     }
     public function dashboard(Request $request){
         // return view('dashboard', ['users'=> User::paginate(1)]);
+      
         return view('dashboard', ['users'=> User::all()]);
+        // return view('dashboard', ['users'=> User::all(),'userName'=>auth()->user()]);
 
         
         // if you want to access the dashboard without the auth middleware in your route
