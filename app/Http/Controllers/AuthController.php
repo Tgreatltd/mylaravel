@@ -23,6 +23,13 @@ class AuthController extends Controller
         ]);
 
         User::create($data);
+
+       // to insert manually
+
+        // User::insert([
+        //     'firstName'=>$request->firstName,
+        //     'password'=>$request->Hash::make($request->password)
+        // ]);
         session()->flash('success','Your account has been registered');
         $mailing = ['subject'=>'welcome', 'message'=> 'you are welcome to our page'];
         Mail::to($request->email)->send(new sendEmail($mailing));
