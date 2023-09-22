@@ -20,8 +20,8 @@ Route::get('/', [MyController::class, 'index']);
 // Route::get('/about/{name=?}/{age=?}', [MyController::class, 'about/name/age'])->name('about/name/age');
 Route::get('/about', [MyController::class, 'about'])->name('about');
 
-Route::get('/board/{name?}/{age?}', function ($name=null,$age=null) {
-    return view('board',['name'=>$name,'age'=>$age]);
+Route::get('/board/{name?}/{age?}', function ($name = null, $age = null) {
+    return view('board', ['name' => $name, 'age' => $age]);
 });
 
 Route::get('/register', [AuthController::class, 'register'])->name('register');
@@ -36,6 +36,6 @@ Route::post('/update/{id}', [AuthController::class, 'update'])->name('update');
 Route::get('/del/{id}', [AuthController::class, 'del'])->name('del');
 
 // fallback is used to handle 404 error pages
-Route::fallback(function(){
+Route::fallback(function () {
     return 'Not Found';
 });

@@ -13,9 +13,9 @@
 @endauth
 
 @php
-    $user=auth()->user();
+    $userName=auth()->user();
 @endphp
-    <h1>welcome {{$user->firstName}} {{$user->lastName}}</h1>
+    <h1>welcome {{$userName->firstName}} {{$userName->lastName}}</h1>
     @csrf
     <div class="container">
         <table class="table table-striped">
@@ -23,14 +23,19 @@
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Time Created</th>
+                    <th>Time Updated</th>
                     <th>Action</th>
                 </tr>
                 <tbody>
-                    @foreach ($used as $usa)
+                    @foreach ($users as $usa)
                         <tr>
                             <td>{{$usa->firstName}}</td>
                             <td>{{$usa->lastName}}</td>
                             <td>{{$usa->email}}</td>
+                            <td>{{$usa->created_at}}</td>
+                            <td>{{$usa->updated_at}}</td>
                             <td class="d-flex">
                                 <form action="{{url('edit/'.$usa->id)}}"  method="GET">
                                     <button  class="btn btn-success m2-5">Edit</button>
@@ -47,6 +52,7 @@
         </table>
         {{-- <button  class="btn btn-success"><a href="{{url('edit/'.$usa->id)}}">Edit</a></button> --}}
         {{-- <a href="{{url('del/'.$usa->id)}}">Delete</a> --}}
-    {{-- {{ $users->links() }} --}}
+    
+        {{-- {{ $users->links() }} --}}
     </div>
 @endsection

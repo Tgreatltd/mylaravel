@@ -56,7 +56,7 @@ class AuthController extends Controller
            return redirect()->back()->with('error', 'User not found');
         }
         $user->firstName = $data['firstName'];
-        $user->lastName = $data['lastName'];
+        $user->lastName = $data['lastName']; 
         $user->save();
         return redirect()-> route('dashboard');
     }
