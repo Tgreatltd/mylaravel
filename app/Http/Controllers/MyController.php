@@ -7,15 +7,15 @@ use illuminate\Http\Request;
 
 class MyController extends Controller
 {
-    function index(){
-        return view('welcome');
+    function index(Request $request, $name){
+        return view('welcome', ['name'=>$name]);
     }
     function profile(){
         return view('profile');
     }
 
-    function about(Request $request){
-        return view('about', ['name'=>$request->name, 'age'=>$request->age]);
+    function about($name){
+        return view('about', ['name'=>$name]);
     }
 
   public  function login(){

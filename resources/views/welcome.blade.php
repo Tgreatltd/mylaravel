@@ -10,8 +10,7 @@
 </body>
 </html> --}}
 @extends('app')
-
 @section('content')
-   <h1>WELCOME PAGE</h1> 
-   <a href="{{route('about')}}">To about</a>
+   <h1>WELCOME PAGE {{$name}}</h1> 
+   {{-- <a href="{{route('about')}}">To about</a> --}}
 @endsection
