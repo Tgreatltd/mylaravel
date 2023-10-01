@@ -35,7 +35,6 @@
                 <input type="text" class="form-control" name="password">
                 @error('password')
                     <small class="text-danger">{{$message}}</small>
-                    <small class="text-succe"></small>
                 @enderror
             </div>
             <button name="submit" class="btn btn-success form-control">Submit</button>
