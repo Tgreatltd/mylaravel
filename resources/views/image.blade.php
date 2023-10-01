@@ -3,10 +3,19 @@
      
 <div class="container bg-danger p-5 mt-3">
   <div class="card p-5">
-    <form action="{{route('storeImage')}}" method="POST">
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+   @endif
+    <form action="{{route('store')}}" method="POST">
+        @csrf
         <div class="form-group">
             <label for="image">Image</label>
-            <input type="file" name="image">
+            <input type="file" name="image" accept="image/*">
+            @error('image')
+                <div class="text-danger">{{$message}}</div>
+            @enderror
         </div>
         <button class="btn btn-success mt-3">Submit</button>
      </form>

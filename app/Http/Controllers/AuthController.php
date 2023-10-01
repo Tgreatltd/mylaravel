@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\sendEmail;
 use App\Models\User;
+use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
@@ -79,10 +80,11 @@ class AuthController extends Controller
 
     public function store(Request $request){
       $request->validate([
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
+        'image' => 'image|max:2048', // Adjust validation rules as needed
       ]);
  // Store the uploaded image in the public/images directory
-       $request->file('image')->store('images', 'public');
+ $request->file('image')->store('images', 'public');
+;
 
         // You can save the $imagePath to a database table if needed
 
