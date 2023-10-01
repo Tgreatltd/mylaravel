@@ -11,7 +11,6 @@
             @csrf
             <div class="form-group">
                 <label for="firstName">FirstName</label>
-                <label for="firstName">FirstName</label>
                 <input type="text" class="form-control" name="firstName" value="{{old('firstName')}}">
                 @error('firstName')
                     <small class="text-danger">{{$message}}</small>
