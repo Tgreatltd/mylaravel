@@ -43,4 +43,8 @@ class MyController extends Controller
         return view('edit', ['user'=>User::find($id)]);
       
     }
+
+    public function image(){
+        
+    }
 }
