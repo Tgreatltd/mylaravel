@@ -10,6 +10,11 @@ class MyController extends Controller
     function index(Request $request, $name){
         return view('welcome', ['name'=>$name]);
     }
+
+    function home(Request $request, $name){
+        return view('homeexample', ['name'=>$name]);
+    }
+
     function profile(){
         return view('profile');
     }
