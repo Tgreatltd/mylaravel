@@ -79,16 +79,41 @@ class AuthController extends Controller
     }
 
     public function store(Request $request){
-      $request->validate([
-        'image' => 'image|max:2048', // Adjust validation rules as needed
-      ]);
- // Store the uploaded image in the public/images directory
- $request->file('image')->store('images', 'public');
-;
+//       $request->validate([
+//         'image' => 'image|max:2048', // Adjust validation rules as needed
+//       ]);
+//  // Store the uploaded image in the public/images directory
+//  $request->file('image')->store('images', 'public');
+// ;
 
-        // You can save the $imagePath to a database table if needed
+//         // You can save the $imagePath to a database table if needed
 
-        // Redirect back with a success message
-        return redirect()->back()->with('success', 'Image uploaded successfully.');
+//         // Redirect back with a success message
+//         return redirect()->back()->with('success', 'Image uploaded successfully.');
+
+  
+        // Validate the uploaded image
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:8048', // Adjust validation rules as needed
+        ]);
+
+        // Process the uploaded image
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('images', $imageName, 'public'); // Store in the public/images directory
+
+            // Optionally, you can save the image path to a database table
+            // Example: Image::create(['path' => 'images/' . $imageName]);
+
+            // Redirect back with a success message
+            return redirect()->back()->with('success', 'Image uploaded successfully.');
+        }
+
+        // Handle the case where no image was provided
+        return redirect()->back()->with('error', 'No image provided.');
+  
+
+
     }
 }
