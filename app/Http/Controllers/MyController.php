@@ -45,6 +45,6 @@ class MyController extends Controller
     }
 
     public function image(){
-        
+       return view('image');
     }
 }
