@@ -76,4 +76,17 @@ class AuthController extends Controller
         }
         // return redirect()->route('dashboard');
     }
+
+    public function store(Request $request){
+      $request->validate([
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
+      ]);
+ // Store the uploaded image in the public/images directory
+       $request->file('image')->store('images', 'public');
+
+        // You can save the $imagePath to a database table if needed
+
+        // Redirect back with a success message
+        return redirect()->back()->with('success', 'Image uploaded successfully.');
+    }
 }
