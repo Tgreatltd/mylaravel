@@ -82,7 +82,7 @@ class AuthController extends Controller
         // dd($request->all());
         // return
       $request->validate([
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
+        'image' => 'required|image|mime:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
       ]);
  // Store the uploaded image in the public/images directory
     $imagePath= $request->file( 'image')->store('images', 'public');
