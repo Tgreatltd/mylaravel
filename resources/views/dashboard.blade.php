@@ -45,7 +45,6 @@
                                 </form>
                             </td>
                         </tr>
-                        <div>{{$mes}}</div>
                     @endforeach
                 </tbody>
             </thead>
