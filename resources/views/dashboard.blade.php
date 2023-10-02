@@ -49,9 +49,9 @@
                 </tbody>
             </thead>
         </table>
-        <button  class="btn btn-success"><a href="{{url('edit/'.$usa->id)}}">Edit</a></button> --}}
+        {{-- <button  class="btn btn-success"><a href="{{url('edit/'.$usa->id)}}">Edit</a></button> --}}
         {{-- <a href="{{url('del/'.$usa->id)}}">Delete</a> --}}
     
-        {{-- {{ $users->links() }}
+        {{-- {{ $users->links() }} --}}
     </div>
 @endsection
