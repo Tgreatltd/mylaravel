@@ -45,7 +45,7 @@
                                 </form>
                             </td>
                         </tr>
-                        <div>{{$mess}}</div>
+                        <div>{{$mes}}</div>
                     @endforeach
                 </tbody>
             </thead>
