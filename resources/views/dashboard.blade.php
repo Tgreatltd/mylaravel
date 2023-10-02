@@ -45,7 +45,7 @@
                                 </form>
                             </td>
                         </tr>
-                        
+                        <div>{{$message}}</div>
                     @endforeach
                 </tbody>
             </thead>
