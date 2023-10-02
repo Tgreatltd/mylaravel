@@ -8,7 +8,13 @@
         {{ session('success') }}
     </div>
    @endif
-    <form action="{{route('stores')}}" method="POST">
+
+   @if(session('error'))
+   <div class="alert alert-success">
+       {{ session('error') }}
+   </div>
+  @endif
+    <form action="{{route('stores')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="image">Image</label>
