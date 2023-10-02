@@ -8,7 +8,7 @@
         {{ session('success') }}
     </div>
    @endif
-    <form action="{{route('store')}}" method="POST">
+    <form action="{{route('stores')}}" method="POST">
         @csrf
         <div class="form-group">
             <label for="image">Image</label>
@@ -17,7 +17,7 @@
                 <div class="text-danger">{{$message}}</div>
             @enderror
         </div>
-        <button class="btn btn-success mt-3">Submit</button>
+        <button type="submit" class="btn btn-success mt-3">Submit</button>
      </form>
   </div>
 </div>
