@@ -18,7 +18,6 @@
         @csrf
         <div class="form-group">
             <label for="image">Image</label>
-            <label for="image">Image</label>
             <input type="file" name="image" accept="image/*">
             @error('image')
                 <div class="text-danger">{{$message}}</div>
