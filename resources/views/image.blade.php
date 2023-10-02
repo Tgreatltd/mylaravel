@@ -21,6 +21,7 @@
             <input type="file" name="image" accept="image/*">
             @error('image')
                 <div class="text-danger">{{$message}}</div>
+                <div class="text-danger">{{$message}}</div>
             @enderror
         </div>
         <button type="submit" class="btn btn-success mt-3">Submit</button>
