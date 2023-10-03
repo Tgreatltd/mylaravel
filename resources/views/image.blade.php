@@ -76,9 +76,11 @@
         </tbody>
     </table>
 </div>
+{{-- {{ dd($userImage) }}
+<img src="{{ asset('storage/images/' . $userImage) }}" alt="Image">
 <div>
     <img src="{{ asset('storage/images/'. $userImage) }}">
-</div>
+</div> --}}
 
     {{-- <div>
         <img src="{{ asset('storage/images/9BG5qMVfCdZEUCVSiDdx5LGovDcl4iuAA4L9F4SY.jpg') }}" alt="Image">

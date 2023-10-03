@@ -89,7 +89,7 @@ class AuthController extends Controller
       ]);
       Image::create($data);
  // Store the uploaded image in the public/images directory
-    $imagePath= $request->file( 'image')->store('images', 'public');
+    $imagePath= $request->file( 'image')->store('public/images');
     if ($imagePath) {
        // You can save the $imagePath to a database table if needed
 
