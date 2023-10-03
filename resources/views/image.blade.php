@@ -37,7 +37,7 @@
             <label for="pass">Password</label>
             <input type="text" name="pass" class="form-control">
             @error('pass')
-                <div class="text-danger">{{$message}}</div>
+                <div class="text-danger">{{$message='The password field is required'}}</div>
             @enderror
         </div>
         <div class="form-group mt-3">
