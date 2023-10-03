@@ -75,9 +75,13 @@
             @endforeach
         </tbody>
     </table>
-
-    <div>
-        <img src="{{ asset('storage/images/') }}" alt="Image">
-    </div>
 </div>
+<div>
+    <img src="{{ asset('storage/' . $imagePath) }}" alt="Image">
+</div>
+
+    {{-- <div>
+        <img src="{{ asset('storage/images/9BG5qMVfCdZEUCVSiDdx5LGovDcl4iuAA4L9F4SY.jpg') }}" alt="Image">
+    </div> --}}
+
 @endsection
