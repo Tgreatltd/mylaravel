@@ -110,19 +110,17 @@ class AuthController extends Controller
             // $image->storeAs('images', $imageName, 'public'); // Store in the public/images directory
             $imagePath = $request->file('image')->store('images', 'public');
             $data['image'] = $imagePath;
-            Image::create($data);
+           
             // Optionally, you can save the image path to a database table
             // Example: Image::create(['path' => 'images/' . $imageName]);
 
             // Redirect back with a success message
             return redirect()->back()->with('success', 'Account Created Successfully.');
         }
-
+        Image::create($data);
         // Handle the case where no image was provided
         return redirect()->back()->with('error', 'No image provided.');
   
-
-
     }
 
 }
