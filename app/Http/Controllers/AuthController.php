@@ -87,7 +87,20 @@ class AuthController extends Controller
         'email'=>'required|string|email|unique:images',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
       ]);
+      if ($request->hasFile('image')) {
+        // $image = $request->file('image');
+        // $imageName = time() . '.' . $image->getClientOriginalExtension();
+        // $image->storeAs('images', $imageName, 'public'); // Store in the public/images directory
+        $imagePath = $request->file('image')->store('images', 'public');
+        $data['image'] = $imagePath;
+       Image::create($data);
+        // Optionally, you can save the image path to a database table
+        // Example: Image::create(['path' => 'images/' . $imageName]);
 
+        // Redirect back with a success message
+        return redirect()->back()->with('success', 'Account Created Successfully.');
+    }
+      
  // Store the uploaded image in the public/images directory
     // $imagePath= $request->file( 'image')->store('images', 'public');
     // Image::create($data);
@@ -103,21 +116,9 @@ class AuthController extends Controller
     // }
 
 
-        // Process the uploaded image
-        if ($request->hasFile('image')) {
-            // $image = $request->file('image');
-            // $imageName = time() . '.' . $image->getClientOriginalExtension();
-            // $image->storeAs('images', $imageName, 'public'); // Store in the public/images directory
-            $imagePath = $request->file('image')->store('images', 'public');
-            $data['image'] = $imagePath;
-           
-            // Optionally, you can save the image path to a database table
-            // Example: Image::create(['path' => 'images/' . $imageName]);
-
-            // Redirect back with a success message
-            return redirect()->back()->with('success', 'Account Created Successfully.');
-        }
-        Image::create($data);
+        
+       
+       
         // Handle the case where no image was provided
         return redirect()->back()->with('error', 'No image provided.');
   
