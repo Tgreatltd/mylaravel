@@ -51,6 +51,8 @@ class MyController extends Controller
     }
 
     public function image(){
+        // $images= Image::find($id);
+        // $imagePath=$images->image;
        return view('image', ['users'=>image::all()]);
     }
 }

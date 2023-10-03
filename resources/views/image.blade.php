@@ -53,7 +53,7 @@
 </div>
 
 <div class="container mt-5">
-    <table class="table">
+    <table class="table table-stripped">
         <thead>
             <tr>
                 <th>ID</th>
@@ -67,15 +67,17 @@
             @foreach ($users as $user)
             <tr>
                 <td>{{$user->id}}</td>
-                <td>{{$user->id}}</td>
-                <td>{{$user->id}}</td>
-                <td>{{$user->id}}</td>
-                <td>{{$user->id}}</td>
+                <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
+                <td>{{$user->image}}</td>
+                <td>{{$user->pass}}</td>
             </tr>  
             @endforeach
         </tbody>
     </table>
+
+    <div>
+        <img src="{{ asset('storage/images/') }}" alt="Image">
+    </div>
 </div>
-
-
 @endsection
