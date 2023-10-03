@@ -50,9 +50,9 @@ class MyController extends Controller
       
     }
 
-    public function image($id=null){
+    public function image($id){
         $images= Image::find($id);
         $imagePath=$images->image;
-       return view('image', ['users'=>image::all(),$imagePath]);
+       return view('image', ['users'=>image::all(), 'userImage'=>$imagePath]);
     }
 }

@@ -77,7 +77,7 @@
     </table>
 </div>
 <div>
-    <img src="{{ asset('storage/' . $imagePath) }}" alt="Image">
+    <img src="{{ asset('storage/images/'. $userImage) }}">
 </div>
 
     {{-- <div>
