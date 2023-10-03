@@ -40,9 +40,9 @@
                 <div class="text-danger">{{$message}}</div>
             @enderror
         </div>
-        <div class="form-group">
+        <div class="form-group mt-3">
             <label for="image">Image</label>
-            <input type="file" name="image" accept="image/*">
+            <input type="file" name="image" class="form-control">
             @error('image')
                 <div class="text-danger">{{$message}}</div>
             @enderror
