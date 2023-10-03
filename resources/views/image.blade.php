@@ -34,7 +34,7 @@
         </div>
 
         <div class="form-group">
-            <label for="pass">Email</label>
+            <label for="pass">Password</label>
             <input type="text" name="pass" class="form-control">
             @error('pass')
                 <div class="text-danger">{{$message}}</div>

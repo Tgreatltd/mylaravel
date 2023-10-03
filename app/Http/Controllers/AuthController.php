@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Mail\sendEmail;
+use App\Models\Image;
 use App\Models\User;
-use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
@@ -81,16 +81,20 @@ class AuthController extends Controller
     public function stores(Request $request){
         // dd($request->all());
         // return
-      $request->validate([
+     $data= $request->validate([
+        'name'=>'required|string',
+        'pass'=>'required|string',
+        'email'=>'required|string|email|unique:images',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
       ]);
+      Image::create($data);
  // Store the uploaded image in the public/images directory
     $imagePath= $request->file( 'image')->store('images', 'public');
     if ($imagePath) {
        // You can save the $imagePath to a database table if needed
 
         // Redirect back with a success message
-        return redirect()->back()->with('success', 'Image uploaded successfully.');
+        return redirect()->back()->with('success', 'Account Created Sucessfully.');
  
     }
     else{

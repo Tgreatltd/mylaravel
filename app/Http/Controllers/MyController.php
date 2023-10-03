@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Image;
 use illuminate\Http\Request;
 
 class MyController extends Controller
@@ -50,6 +51,6 @@ class MyController extends Controller
     }
 
     public function image(){
-       return view('image');
+       return view('image', ['users'=>image::all()]);
     }
 }
