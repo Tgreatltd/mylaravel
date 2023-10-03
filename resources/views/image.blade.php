@@ -16,6 +16,30 @@
   @endif
     <form action="{{route('stores')}}" method="POST" enctype="multipart/form-data">
         @csrf
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="form-control">
+            @error('name')
+                <div class="text-danger">{{$message}}</div>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="text" name="email" class="form-control">
+            @error('email')
+                <div class="text-danger">{{$message}}</div>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="pass">Email</label>
+            <input type="text" name="pass" class="form-control">
+            @error('pass')
+                <div class="text-danger">{{$message}}</div>
+            @enderror
+        </div>
         <div class="form-group">
             <label for="image">Image</label>
             <input type="file" name="image" accept="image/*">
