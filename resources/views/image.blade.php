@@ -51,7 +51,8 @@
      </form>
   </div>
 </div>
-
+@if ($users)
+    
 <div class="container mt-5">
     <table class="table table-stripped">
         <thead>
@@ -76,11 +77,12 @@
         </tbody>
     </table>
 </div>
+@endif
 
 {{-- to display the image from database --}}
 
 <div>
-    <img src="{{ asset('storage/'. $userImage) }}">
+    {{-- <img src="{{ asset('storage/'. $userImage) }}"> --}}
 </div>
 
     {{-- <div>
