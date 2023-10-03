@@ -52,4 +52,30 @@
   </div>
 </div>
 
+<div class="container mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>IMAGE</th>
+                <th>PASSWORD</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($users as $user)
+            <tr>
+                <td>{{$user->id}}</td>
+                <td>{{$user->id}}</td>
+                <td>{{$user->id}}</td>
+                <td>{{$user->id}}</td>
+                <td>{{$user->id}}</td>
+            </tr>  
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
+
 @endsection
