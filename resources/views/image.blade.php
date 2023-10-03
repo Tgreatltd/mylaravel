@@ -51,8 +51,7 @@
      </form>
   </div>
 </div>
-@if ($users)
-    
+
 <div class="container mt-5">
     <table class="table table-stripped">
         <thead>
@@ -77,7 +76,6 @@
         </tbody>
     </table>
 </div>
-@endif
 
 {{-- to display the image from database --}}
 
