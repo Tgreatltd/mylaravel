@@ -76,11 +76,11 @@
         </tbody>
     </table>
 </div>
-{{-- {{ dd($userImage) }}
-<img src="{{ asset('storage/images/' . $userImage) }}" alt="Image">
-<div> --}}
 
-    {{-- <img src="{{ asset('storage/images/'. $userImage) }}"> --}}
+{{-- to display the image from database --}}
+
+<div>
+    <img src="{{ asset('storage/'. $userImage) }}">
 </div>
 
     {{-- <div>
