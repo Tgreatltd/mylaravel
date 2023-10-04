@@ -61,6 +61,7 @@
                 <th>EMAIL</th>
                 <th>IMAGE</th>
                 <th>PASSWORD</th>
+                <th>PICTURES</th>
             </tr>
         </thead>
         <tbody>
@@ -71,7 +72,8 @@
                 <td>{{$user->email}}</td>
                 <td>{{$user->image}}</td>
                 <td>{{$user->pass}}</td>
-            </tr>  
+                <td><img style="height: 100px; width:100px" src="{{ asset('storage/'. $user->image) }}" alt=""></td>
+            </tr> 
             @endforeach
         </tbody>
     </table>
