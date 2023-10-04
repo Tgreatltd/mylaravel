@@ -35,7 +35,7 @@ Route::get('/dashboard', [MyController::class, 'dashboard'])->name('dashboard')-
 Route::get('/edit/{id}', [MyController::class, 'edit'])->name('edit');
 Route::post('/update/{id}', [AuthController::class, 'update'])->name('update');
 Route::get('/del/{id}', [AuthController::class, 'del'])->name('del');
-Route::get('/image/{id}', [MyController::class, 'image'])->name('image');
+Route::get('/image', [MyController::class, 'image'])->name('image');
 Route::post('/store', [AuthController::class, 'stores'])->name('stores');
 
 // fallback is used to handle 404 error pages
