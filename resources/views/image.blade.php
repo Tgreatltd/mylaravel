@@ -77,10 +77,9 @@
     </table>
 </div>
 
-{{-- to display the image from database --}}
 
 <div>
-    {{-- <img src="{{ asset('storage/'. $userImage) }}"> --}}
+    <img style="height: 200px; width:200px" src="{{ asset('storage/'. $userImage) }}">
 </div>
 
     {{-- <div>
