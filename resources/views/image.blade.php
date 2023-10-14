@@ -81,9 +81,9 @@
 
  {{-- to display image from database --}}
 
-<div>
+{{-- <div>
     <img style="height: 200px; width:200px" src="{{ asset('storage/'. $userImage) }}">
-</div>
+</div> --}}
 
     {{-- <div>
         <img src="{{ asset('storage/images/9BG5qMVfCdZEUCVSiDdx5LGovDcl4iuAA4L9F4SY.jpg') }}" alt="Image">
