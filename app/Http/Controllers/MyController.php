@@ -8,11 +8,11 @@ use illuminate\Http\Request;
 
 class MyController extends Controller
 {
-    function index(Request $request, $name){
-        return view('welcome', ['name'=>$name]);
+    function index(){
+        return view('welcome');
     }
 
-    function home(Request $request, $name){
+    function home( $name){
         return view('homeexample', ['name'=>$name]);
     }
 
