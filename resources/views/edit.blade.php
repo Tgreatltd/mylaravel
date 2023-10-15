@@ -20,6 +20,6 @@
                 </div>
                 <button type="submit" class="btn btn-success form-control">Update</button>
             </form>
-        </div>
+        </div>  
     </div>
 @endsection
