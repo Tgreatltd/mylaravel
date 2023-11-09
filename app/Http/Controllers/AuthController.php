@@ -82,7 +82,7 @@ class AuthController extends Controller
         // dd($request->all());
         // return
      $data= $request->validate([
-        'name'=>'required|string',
+        'name'=>'required|string', 
         'pass'=>'required|string',
         'email'=>'required|string|email|unique:images',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
