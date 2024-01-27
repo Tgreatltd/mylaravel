@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <div>{{$details}}</div>
+    @php
+    $user=auth()->user();
+@endphp
+    <div>{{$details}} {{$user->firstName}} {{$user->lastName}}<</div>
 </body>
 </html>
